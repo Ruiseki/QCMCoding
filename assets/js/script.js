@@ -22,7 +22,7 @@ var cartes = [
         "answers": [
             "Interprété",
             "Compilé",
-            "Plus compliqué que ça encore",
+            "Plus compliqué que ça encore"
         ],
         "goodAnswerIndex": [
             1
@@ -32,7 +32,7 @@ var cartes = [
         "question": "Le HTML est un langage de programmation",
         "answers": [
             "Vrai",
-            "Faux",
+            "Faux"
         ],
         "goodAnswerIndex": [
             1
@@ -50,28 +50,28 @@ var cartes = [
 ];
 
 currentGame.maxScore = cartes.length;
-document.querySelector('#answer-count').innerHTML = `${index + 1}/${cartes.length}`;
 
-generateCarte(index);
-
-function generateCarte(i)
+function generateCarte()
 {
     
-    document.querySelector('#answer-count').innerHTML = `${index + 1}/${cartes.length}`;
+    document.querySelector('#mainInfo').innerHTML = `${index + 1}/${cartes.length}`;
     let newCarte = document.querySelector('.carte').cloneNode(true);
-    newCarte.querySelector('.question').innerHTML = cartes[i].question;
+    newCarte.querySelector('.question').innerHTML = cartes[index].question;
     newCarte.removeChild(newCarte.querySelector('.answer'));
 
-    cartes[i].answers.forEach(answer => {
+    cartes[index].answers.forEach(answer => {
         let newAnswer = document.querySelector('.answer').cloneNode(true);
         newAnswer.querySelector('.answerLabel').innerHTML = answer;
         newCarte.appendChild(newAnswer);
     });
+    if(index == cartes.length - 1) newCarte.querySelector('#next').innerHTML = "Finish";
     document.querySelector('#content').appendChild(newCarte);
 }
 
 function startTest()
 {
+    generateCarte();
+    document.querySelector('#content').style.display = 'flex';
     document.getElementById("start-button").style.display = "none";
     document.getElementById("rickRoll").style.display = "block";
 }
@@ -90,15 +90,12 @@ function next()
     
     if(check.length != cartes[index].goodAnswerIndex.length) goodAnswer = false;
 
-    console.log(`Taille des tableau :\n${check.length}\n${cartes[index].goodAnswerIndex.length}`);
-
     if(goodAnswer)
     {
         for(let i = 0; i < check.length; i++)
         {
             if(check[i] != cartes[index].goodAnswerIndex[i])
             {
-                console.log(`Comparaison : ${check[i]} et ${cartes[index].goodAnswerIndex[i]}`);
                 goodAnswer = false;
                 break;
             }
@@ -107,18 +104,16 @@ function next()
 
     if(goodAnswer) currentGame.score++;
 
-    console.log(currentGame);
-
-    index++;
-    document.querySelector('#content').removeChild(document.querySelector('#content').lastChild);
-    generateCarte(index);
-}
-
-function prev()
-{
-    index = index == cartes.length + 1 ? 0 : index - 1;
-    document.querySelector('#content').removeChild(document.querySelector('#content').lastChild);
-    generateCarte(index);
+    if(index == cartes.length - 1)
+    {
+        // afficher l'ecran de resultat
+    }
+    else
+    {
+        index++;
+        document.querySelector('#content').removeChild(document.querySelector('#content').lastChild);
+        generateCarte(index);
+    }
 }
 
 function sendName()

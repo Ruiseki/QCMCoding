@@ -1,0 +1,35 @@
+[
+    {
+        "question": "Quel est le niveau du langage Python ?",
+        "answers": [
+            "Bas niveau",
+            "Facile",
+            "Haut niveau",
+            "Intermédiaire"
+        ],
+        "goodAnswerIndex": [
+            2
+        ]
+    },
+    {
+        "question": "Java est-il un langage ...",
+        "answers": [
+            "Interprété",
+            "Compilé",
+            "Plus compliqué que ça encore"
+        ],
+        "goodAnswerIndex": [
+            1
+        ]
+    },
+    {
+        "question": "Le HTML est un langage de programmation",
+        "answers": [
+            "Vrai",
+            "Faux"
+        ],
+        "goodAnswerIndex": [
+            1
+        ]
+    }
+]
