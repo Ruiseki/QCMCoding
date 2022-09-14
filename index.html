@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,54 +10,57 @@
     <script src="./assets/js/jquery.js" defer></script>
     <script src="./assets/js/script.js" defer></script>
     <script src="./assets/js/animation.js" defer></script>
-    
+
 </head>
+
 <body>
-    <header>
+    <header id="test">
         <div class="header-col">
             <!-- Logo Coding -->
-            <a href="https://codingfactory.fr" target="_blank"><img src="assets/img/logo-coding-couleur-png.webp" alt="Logo de la Coding Factory" id="logo" /></a>
+            <a href="https://codingfactory.fr" target="_blank"><img src="assets/img/logo-coding-couleur-png.webp"
+                    alt="Logo de la Coding Factory" id="logo" /></a>
         </div>
         <div class="header-col">
             <!-- Compteur de réponses -->
-            <p id="answer-count">0/200</p>
+            <p id="answer-count"></p>
         </div>
         <div class="header-col">
             <!-- Stop Test/Start Test -->
             <button onclick="startTest()" id="start-button">Start test</button>
             <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" id="rickRoll">Don't click</a>
-        </div> 
-    </header>   
-    
-<div id="name-pop-up">
-    <label for="name">Pseudo</label>
-    <input id="pseudo" type="text" placeholder="Entrer votre pseudo pour commencer !">
-    <button onclick="sendName()">Valider</button>
-</div>
+        </div>
+    </header>
 
-<div id="wrong-nickname">
-    <p>Pseudo Incorect ! 3 caractères minimum !</p>
-</div>
+    <div id="name-pop-up">
+        <label for="name">Pseudo</label>
+        <input id="pseudo" type="text" placeholder="Entrer votre pseudo pour commencer !">
+        <button onclick="sendName()">Valider</button>
+    </div>
+
+    <div id="wrong-nickname">
+        <p>Pseudo Incorect ! 3 caractères minimum !</p>
+    </div>
 
     <div id="content">
         <section id="carteOrigin">
 
             <section class="carte">
                 <section class="buttons">
-<!--                     <button id="prev" onclick="prev()">Previous</button>
- -->                    <button id="next" onclick="next()">Next</button>
+                    <!--                     <button id="prev" onclick="prev()">Previous</button> -->
+                    <button id="next" onclick="next()">Next</button>
+                    <button id="result" onclick="result()">Resultats</button>
                 </section>
-    
+
                 <p class="question"></p>
-                    <div class="answer">
-                        <input type="checkbox" value="check">
-                        <label class="answerLabel" for="check" type="">---</label>
-                    </div>
+                <div class="answer">
+                    <input type="checkbox" value="check">
+                    <label class="answerLabel" for="check" type="">---</label>
+                </div>
             </section>
-            
+
         </section>
-    
-    <!--     <section id="chapters-page">
+
+        <!--     <section id="chapters-page">
           
             <div id="chapters">
  

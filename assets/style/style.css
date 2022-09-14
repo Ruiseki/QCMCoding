@@ -138,11 +138,12 @@ header{
 #content{
     width:100%;
     height:100%;
-    display:flex;
+    display:none;
     flex-direction:row;
     flex-wrap: nowrap;
     overflow-y: hidden;
     justify-content:space-around;
+    text-align: center ;
 }
 
 #carteOrigin {
@@ -182,7 +183,7 @@ header{
 
 }
 
-#prev,#next{
+#prev,#next,#result{
     border:none;
     padding: 10px 20px;
       background: linear-gradient(-45deg, #ee7752,
@@ -198,6 +199,10 @@ header{
 }
 #prev{
     margin-left:5px;
+}
+
+#result{
+    display: none;
 }
 
 #prev:active,#next:active{
