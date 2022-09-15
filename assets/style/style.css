@@ -146,6 +146,7 @@ header{
     flex-wrap: nowrap;
     overflow-y: hidden;
     justify-content:space-around;
+    text-align: center ;
 }
 
 #carteOrigin {
@@ -185,7 +186,7 @@ header{
 
 }
 
-#prev,#next{
+#prev,#next,#result{
     border:none;
     padding: 10px 20px;
       background: linear-gradient(-45deg, #ee7752,
@@ -201,6 +202,10 @@ header{
 }
 #prev{
     margin-left:5px;
+}
+
+#result{
+    display: none;
 }
 
 #prev:active,#next:active{

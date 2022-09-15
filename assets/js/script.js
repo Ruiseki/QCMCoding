@@ -74,6 +74,8 @@ function startTest()
     document.querySelector('#content').style.display = 'flex';
     document.getElementById("start-button").style.display = "none";
     document.getElementById("rickRoll").style.display = "block";
+
+    $("#content").css("display", "flex").hide().fadeIn();
 }
 
 function next()
@@ -104,7 +106,7 @@ function next()
 
     if(goodAnswer) currentGame.score++;
 
-    if(index == cartes.length - 1)
+    if(index == cartes.length - )
     {
         // afficher l'ecran de resultat
     }
@@ -113,7 +115,16 @@ function next()
         index++;
         document.querySelector('#content').removeChild(document.querySelector('#content').lastChild);
         generateCarte(index);
+        $('.carte').css("display", "block").hide().fadeIn(500);
     }
+}
+
+
+function prev()
+{
+    index = index == cartes.length + 1 ? 0 : index - 1;
+    document.querySelector('#content').removeChild(document.querySelector('#content').lastChild);
+    generateCarte(index);
 }
 
 function sendName()
@@ -124,7 +135,7 @@ function sendName()
     {
         $("#name-pop-up").fadeOut(1000);
         $("#wrong-nickname").fadeOut(1000);
-        document.querySelector('header').style.display = 'flex';
+        $('header').css("display", "flex").hide().fadeIn(1500);
         document.querySelector('#content').style.marginTop = '10px';
     }   
     else
