@@ -14,6 +14,7 @@
 </head>
 
 <body>
+
     <header id="test">
         <div class="header-col">
             <!-- Logo Coding -->
@@ -28,20 +29,41 @@
             <!-- Stop Test/Start Test -->
             <button onclick="startTest()" id="start-button">Start test</button>
             <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" id="rickRoll">Don't click</a>
-        </div> 
-    </header>   
+        </div>
+    </header>
+
     
     <div id="name-pop-up">
         <label for="name">Pseudo</label>
         <input id="pseudo" type="text" placeholder="Entrer votre pseudo pour commencer !">
         <button onclick="sendName()">Valider</button>
+        <span class="circleRandom bluegreen"></span>
+        <span class="circleRandom greenpastel"></span>
+        <span class="circleRandom pinkpastel"></span>
+        <span class="circleRandom redpastel"></span>
+        <span class="circleRandom orangepastel"></span>
+        <span class="circleRandom bluegreen"></span>
+        <span class="circleRandom greenpastel"></span>
+        <span class="circleRandom pinkpastel"></span>
+        <span class="circleRandom redpastel"></span>
+        <span class="circleRandom orangepastel"></span>
+        <span class="circleRandom bluegreen"></span>
+        <span class="circleRandom greenpastel"></span>
+        <span class="circleRandom pinkpastel"></span>
+        <span class="circleRandom redpastel"></span>
+        <span class="circleRandom orangepastel"></span>
+        <span class="circleRandom bluegreen"></span>
+        <span class="circleRandom greenpastel"></span>
+        <span class="circleRandom pinkpastel"></span>
+        <span class="circleRandom redpastel"></span>
+        <span class="circleRandom orangepastel"></span>
     </div>
 
     <div id="wrong-nickname">
-        <p>Pseudo Incorect ! 3 caractères minimum !</p>
+        <p>Pseudo Incorrect !</p>
     </div>
 
-    <div id="ranking">
+    <!-- <div id="ranking">
         <div id="rankingLineOrigin">
             <div class="rankingLine">
                 <img class="rankingNote" src="">
@@ -49,6 +71,33 @@
                 <p class="rankingUserNote">---</p>
             </div>
         </div>
+    </div> -->
+
+    
+    <div id="result">
+        <img src="assets/img/ranking-x.png" alt="rating" id="rating" onclick="lunatic()" />
+        <p id="name">Pseudo</p>
+        <p id="results">Vous êtes aptes pour rentrer à la Coding.</p>
+    </div>
+
+    <div id="retour-fin">
+        <button id="retour" onclick="retour()">Retour au menu</button>
+    </div>
+
+
+    <div id="leaderboard">
+        <table id="ranking">
+            <tbody id="tab">
+                <tr id="rankingLineOrigin">
+                    <td class="rankingUsername">
+                        Pseudo
+                    </td>
+                    <td class="rankingUserNote">
+                        Note
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 
     <div id="content">
@@ -71,11 +120,10 @@
         </section>
     </div>
 
-    <div id="result">
-        <img src="assets/img/ranking-x.png" alt="Logo de la Coding Factory" id="rating" />
-        <p id="name">Killian</p>
-        <p id="results">Un véritable pro de la programmation! </br>Tu passes en deuxième année!</p>
-    </div>
+
+
+
+
 </body>
 
 </html>
