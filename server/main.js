@@ -5,19 +5,15 @@ var data = JSON.parse(fs.readFileSync('./ranking.json'));
 
 const app = express();
 
-app.use(express.json());
+/* app.use(express.json({
+    limit: '50mb'
+})); */
 
-app.post('/getRanking', (req, res) => {
-    res.status(200).json(data);
+app.post('/ranking', (req, res) => {
+    res.set('Access-Control-Allow-Origin', 'http://127.0.0.1:5500');
+    res.json(data);
 });
 
-app.post('/addDataRanking', (req, res) => {
-    console.log('Getting data');
-    data.push(req.body);
-    data.sort((a, b) => a.score - b.score)
-    res.status(200);
-});
-
-app.listen(8082, () => {
-    console.log('Server has started on port 8082');
+app.listen(8044, () => {
+    console.log('Server has started on port 8044');
 });

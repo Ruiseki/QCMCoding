@@ -322,6 +322,17 @@ function sendName()
         $('header').css("display", "flex").hide().fadeIn(1500);
         document.querySelector('#content').style.marginTop = '10px';
         document.querySelector('#name').innerHTML = currentGame.pseudo;
+       
+
+        // Oh on y est presque boi 🥳
+        
+        // fetch("http://92.95.32.114:8044/ranking", {
+        fetch("http://127.0.0.1:8044/ranking", {
+            method: "POST"
+        })
+        .then((result) => result.json())
+        .then((data) => console.log(data));
+        // ....
     }   
     else
     {
@@ -335,20 +346,7 @@ function result() {
     $('#result').css("display", "flex").hide().fadeIn(400);
     $('#retour-fin').css("display", "flex").hide().fadeIn(400);
 
-    let xhr = new XMLHttpRequest();
-
-    xhr.open("POST", "http://127.0.0.1:8082/addDataRanking", true);
-    xhr.setRequestHeader("Content-Type", "application/json");
-
-    /* xhr.onreadystatechange = function ()
-    {
-        if (xhr.readyState === 4 && xhr.status === 200)
-        {
-            result.innerHTML = this.responseText;
-        }
-    }; */
-
-    xhr.send(JSON.stringify(currentGame));
+    // .....
 
     document.querySelector('#mainInfo').innerHTML = currentGame.score * 100 / cartes.length;
 
