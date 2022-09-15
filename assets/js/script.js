@@ -117,12 +117,6 @@ function next()
     document.querySelector('#content').removeChild(document.querySelector('#content').lastChild);
     generateCarte(index);
     $('.carte').css("display", "block").hide().fadeIn(500);
-
-    if (index + 1 == cartes.length) {
-        console.log("hey")
-            $('#next').css("display", "none").hide().fadeOut(500);
-            $('#result').css("display", "block").hide().fadeIn(500);
-    }
 }
 
 
