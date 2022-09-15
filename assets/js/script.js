@@ -1,3 +1,4 @@
+var host = '127.0.0.1', port = 8044;
 var index = 0;
 var currentGame = {
     "pseudo" : "Guest",
@@ -294,8 +295,6 @@ function next()
 
     if(goodAnswer) currentGame.score++;
 
-    console.log(currentGame);
-
     if(index == cartes.length - 1)
     {
         result();
@@ -322,17 +321,13 @@ function sendName()
         $('header').css("display", "flex").hide().fadeIn(1500);
         document.querySelector('#content').style.marginTop = '10px';
         document.querySelector('#name').innerHTML = currentGame.pseudo;
-       
-
-        // Oh on y est presque boi 🥳
         
-        // fetch("http://92.95.32.114:8044/ranking", {
-        fetch("http://127.0.0.1:8044/ranking", {
+        fetch(`http://${host}:${port}/ranking`, {
             method: "POST"
         })
         .then((result) => result.json())
         .then((data) => console.log(data));
-        // ....
+        // .....
     }   
     else
     {
@@ -416,6 +411,14 @@ function lunatic()
 
 function retour()
 {
+    fetch(`http://${host}:${port}/upload`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+          },
+        body: {a:1}
+    });
+
     $('#result').fadeOut(1000);
     $('#retour-fin').fadeOut(1000);
     document.getElementById('mainInfo').innerHTML = "Overall Ranking";
