@@ -141,7 +141,7 @@ function result() {
 
     if(currentGame.score < cartes.length * 0.5){
         document.querySelector("#rating").setAttribute("src", "assets/img/ranking-d.png");
-        document.getElementById("results").innerHTML = "Vous n'avez pas le niveau....................";
+        document.getElementById("results").innerHTML = "Va falloir bosser...";
     }
     else if(currentGame.score < cartes.length * 0.7 ){
         document.querySelector("#rating").setAttribute("src", "assets/img/ranking-c.png");
@@ -151,11 +151,11 @@ function result() {
         document.querySelector("#rating").setAttribute("src", "assets/img/ranking-b.png");
         document.getElementById("results").innerHTML = "Vous êtes en bonne voie";
     }
-    else if(currentGame.score < cartes.length * 0.9 ){
+    else if(currentGame.score < cartes.length * 0.95 ){
         document.querySelector("#rating").setAttribute("src", "assets/img/ranking-A.png");
         document.getElementById("results").innerHTML = "Vous êtes bons";
     }
-    else if(currentGame.score < cartes.length * 0.95 ){
+    else if(currentGame.score < cartes.length * 1 ){
         document.querySelector("#rating").setAttribute("src", "assets/img/ranking-s.png");
         document.getElementById("results").innerHTML = "Vous êtes très bon";
     }

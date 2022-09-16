@@ -44,6 +44,39 @@
         ]
     },
     {
+        "question": "(CSS) Que fait la propriété padding ?",
+        "answers": [
+            "Ça rajoute une marge intérieure",
+            "Ça rajoute une marge extérieure",
+            "Ça rajoute une bordure"
+        ],
+        "goodAnswerIndex": [
+            0
+        ]
+    },
+    {
+        "question": "(CSS) Que fait la propriété margin ?",
+        "answers": [
+            "Ça rajoute une marge intérieure",
+            "Ça rajoute une marge extérieure",
+            "Ça rajoute une bordure"
+        ],
+        "goodAnswerIndex": [
+            1
+        ]
+    },
+    {
+        "question": "(CSS) Quelle syntaxe est correcte ?",
+        "answers": [
+            "text-align: center;",
+            "text-align{ center; }",
+            "text-align(center)"
+        ],
+        "goodAnswerIndex": [
+            0
+        ]
+    },
+    {
         "question": "Java est-il un langage ...",
         "answers": [
             "Interprété",
@@ -51,7 +84,7 @@
             "Plus compliqué que ça encore"
         ],
         "goodAnswerIndex": [
-            1
+            2
         ]
     },
     {
@@ -168,11 +201,11 @@
             "Non"
         ],
         "goodAnswerIndex" : [
-            0
+            1
         ]
     },
     {
-        "question" : "(JavaScript) La syntaxe (a, b) => a * (a + b) / b; existe-t-elle et est-elle correct ?",
+        "question" : "(JavaScript) La syntaxe c = (a, b) => a * (a + b) / b; existe-t-elle et est-elle correct ?",
         "answers" : [
             "Oui",
             "Non"
