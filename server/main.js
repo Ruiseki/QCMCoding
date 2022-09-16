@@ -3,6 +3,7 @@ const   express = require('express'),
         bodyParser = require('body-parser');
 
 var data = JSON.parse(fs.readFileSync('./ranking.json'));
+var questions = JSON.parse(fs.readFileSync('./questions.json'));
 
 const app = express();
 
@@ -15,13 +16,16 @@ app.use(express.json());
 })); */
 
 app.post('/ranking', (req, res) => {
-    res.set('Access-Control-Allow-Origin', 'http://92.95.32.114/');
+    res.set('Access-Control-Allow-Origin', '*');
     res.status(200).json(data);
 });
 
-app.post('/upload', (req, res) => {
-    
+app.post('/questions', (req, res) => {
+    res.set('Access-Control-Allow-Origin', '*');
+    res.status(200).json(questions);
+});
 
+app.post('/upload', (req, res) => {
     console.log(req.body);
 
     /* let game = req.body;

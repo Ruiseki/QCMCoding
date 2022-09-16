@@ -101,6 +101,16 @@ header {
     animation: randMove 5s none 0s infinite alternate linear, luminousDot 3s none 0s infinite linear;
 
 }
+.yellowpastel {
+    background-color: rgb(248, 236, 111);
+    --shadow-color: rgb(248, 236, 111);
+    top: var(--top);
+    bottom: var(--bottom);
+    right: var(--right);
+    left: var(--left);
+    animation: randMove 5s none 0s infinite alternate linear, luminousDot 3s none 0s infinite linear;
+
+}
 
 .orangepastel {
     background-color: rgb(252, 178, 129);
@@ -117,7 +127,6 @@ header {
     height: 25px;
     width: 25px;
     border-radius: 50%;
-    display: inline-block;
     position: absolute;
 }
 
@@ -141,6 +150,7 @@ header {
     font-size: 100px;
     color: white;
     z-index: 10;
+    text-align: center;
 }
 
 #name-pop-up button {
@@ -181,6 +191,16 @@ header {
 #leaderboard {
     display: none;
     justify-content: space-around;
+    border: 2px none black;
+}
+
+@media only screen and (max-width: 768px){
+    #ranking{
+        width: 100% !important;
+    }
+    #results{
+        font-size: 30px !important;
+    }
 }
 
 #ranking {
@@ -191,10 +211,15 @@ header {
     background-color: white;
 }
 
-#rankingLineOrigin {
+.line {
     display: flex;
     justify-content: space-around;
     border-bottom: solid rgb(202, 202, 202) 1px;
+    transition: box-shadow 500ms;
+}
+
+.line:hover{
+    box-shadow: inset 0px 0px 5px rgb(241, 64, 120);
 }
 
 .rankingUsername,
@@ -202,6 +227,7 @@ header {
 .ranking {
     font-size: 30px;
     text-align: center;
+    cursor: default;
 }
 
 tbody {
@@ -212,6 +238,7 @@ tbody {
 .header-col {
     margin-left: 10%;
     margin-right: 10%;
+    margin-top: 20px;
 }
 
 #logo {
@@ -262,6 +289,10 @@ tbody {
 #start-button {
     background: linear-gradient(to bottom right, #ed395a, #d238e0);
     display: block;
+}
+
+#start-button:hover, #start-button:active{
+    box-shadow: #e73c7e 0px 0px 5px;
 }
 
 
@@ -323,7 +354,7 @@ tbody {
     background: linear-gradient(-45deg, #ee7752,
             #e73c7e, #23a6d5);
     background-size: 400% 400%;
-    animation: gradient 15s ease infinite;
+    animation: gradient 7s ease infinite;
     color: rgb(255, 255, 255);
     font-family: 'Roboto', sans-serif;
     letter-spacing: 1px;
@@ -331,6 +362,7 @@ tbody {
     border-radius: 2px;
     margin-bottom: 5px;
 }
+
 
 #prev {
     margin-left: 5px;

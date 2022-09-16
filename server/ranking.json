@@ -1,1 +1,34 @@
-[]
+[
+    {
+        "pseudo" : "Lucie",
+        "score" : "18+"
+    },
+    {
+        "pseudo" : "Thomas",
+        "score" : "0"
+    },
+    {
+        "pseudo" : "Antoine",
+        "score" : "3"
+    },
+    {
+        "pseudo" : "Elim",
+        "score" : "18"
+    },
+    {
+        "pseudo" : "Killian",
+        "score" : "15"
+    },
+    {
+        "pseudo" : "Johan",
+        "score" : "16"
+    },
+    {
+        "pseudo" : "Robin",
+        "score" : "19+++"
+    },
+    {
+        "pseudo" : "André",
+        "score" : "9"
+    }
+]

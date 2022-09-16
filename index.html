@@ -5,11 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coding Factory Test</title>
+    <title>Coding Quiz</title>
     <link rel="stylesheet" href="./assets/style/style.css">
     <script src="./assets/js/jquery.js" defer></script>
     <script src="./assets/js/script.js" defer></script>
     <script src="./assets/js/animation.js" defer></script>
+    <link rel="shortcut icon" href="assets/img/logo.jpeg" type="image/x-icon">
 
 </head>
 
@@ -18,8 +19,8 @@
     <header id="test">
         <div class="header-col">
             <!-- Logo Coding -->
-            <a href="https://codingfactory.fr" target="_blank"><img src="assets/img/logo-coding-couleur-png.webp"
-                    alt="Logo de la Coding Factory" id="logo" /></a>
+            <a href="https://codingfactory.fr" target="_blank" id="logo-coding"><img
+                    src="assets/img/logo-coding-couleur-png.webp" alt="Logo de la Coding Factory" id="logo" /></a>
         </div>
         <div class="header-col">
             <!-- Compteur de réponses -->
@@ -32,30 +33,34 @@
         </div>
     </header>
 
-    
+
     <div id="name-pop-up">
-        <label for="name">Pseudo</label>
+        <label for="name">Coding Quiz</label>
         <input id="pseudo" type="text" placeholder="Entrez votre pseudo pour commencer !">
         <button onclick="sendName()">Valider</button>
         <span class="circleRandom bluegreen"></span>
         <span class="circleRandom greenpastel"></span>
         <span class="circleRandom pinkpastel"></span>
         <span class="circleRandom redpastel"></span>
+        <span class="circleRandom yellowpastel"></span>
         <span class="circleRandom orangepastel"></span>
         <span class="circleRandom bluegreen"></span>
         <span class="circleRandom greenpastel"></span>
         <span class="circleRandom pinkpastel"></span>
         <span class="circleRandom redpastel"></span>
+        <span class="circleRandom yellowpastel"></span>
         <span class="circleRandom orangepastel"></span>
         <span class="circleRandom bluegreen"></span>
         <span class="circleRandom greenpastel"></span>
         <span class="circleRandom pinkpastel"></span>
         <span class="circleRandom redpastel"></span>
+        <span class="circleRandom yellowpastel"></span>
         <span class="circleRandom orangepastel"></span>
         <span class="circleRandom bluegreen"></span>
         <span class="circleRandom greenpastel"></span>
         <span class="circleRandom pinkpastel"></span>
         <span class="circleRandom redpastel"></span>
+        <span class="circleRandom yellowpastel"></span>
         <span class="circleRandom orangepastel"></span>
     </div>
 
@@ -74,32 +79,17 @@
         </div>
     </div> -->
 
-    
+
     <div id="result">
         <img src="assets/img/ranking-x.png" alt="rating" id="rating" onclick="lunatic()" />
         <p id="name">Pseudo</p>
         <p id="results">Vous êtes aptes pour rentrer à la Coding.</p>
     </div>
 
-    <div id="retour-fin">
-        <button id="retour" onclick="retour()">Retour au menu</button>
-    </div>
 
 
-    <div id="leaderboard">
-        <table id="ranking">
-            <tbody id="tab">
-                <tr id="rankingLineOrigin">
-                    <td class="rankingUsername">
-                        Pseudo
-                    </td>
-                    <td class="rankingUserNote">
-                        Note
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+
+
 
 
     <div id="content">
@@ -121,7 +111,25 @@
 
         </section>
     </div>
-    
+
+    <div id="leaderboard">
+        <table id="ranking">
+            <tbody id="tab">
+                <tr class="line">
+                    <td class="rankingUsername">
+                        Pseudo
+                    </td>
+                    <td class="rankingUserNote">
+                        Note
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div id="retour-fin">
+        <button id="retour" onclick="retour()">Retour au menu</button>
+    </div>
 </body>
 
 </html>

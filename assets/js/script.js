@@ -1,240 +1,11 @@
-var host = '127.0.0.1', port = 8044;
+var host = '92.95.32.114', port = 8044;
+var xhr = new XMLHttpRequest();
 var index = 0;
 var currentGame = {
     "pseudo" : "Guest",
     "score" : 0
 };
-var cartes = [
-    {
-        "question" : "Quelle balise est utilisée pour lier le CSS à l'HTML?",
-        "answers" : [
-            "meta",
-            "script",
-            "link",
-            "css"
-        ],
-        "goodAnswerIndex" : [
-            2
-        ]
-    },
-    {
-        "question" : "Quelle balise est utilisée pour ajouter du Javascript à l'HTML?",
-        "answers" : [
-            "link",
-            "js",
-            "meta",
-            "script"
-        ],
-        "goodAnswerIndex" : [
-            3
-        ]
-    },
-    {
-        "question" : "La méthode POST utilisée pour l'envoi de formulaire renvoie les données dans l'URL",
-        "answers" : [
-            "Vrai",
-            "Faux"
-        ],
-        "goodAnswerIndex" : [
-            1
-        ]
-    },
-    {
-        "question": "Le HTML est un langage de programmation",
-        "answers": [
-            "Vrai",
-            "Faux"
-        ],
-        "goodAnswerIndex": [
-            1
-        ]
-    }/* ,
-    {
-        "question": "Java est-il un langage ...",
-        "answers": [
-            "Interprété",
-            "Compilé",
-            "Plus compliqué que ça encore"
-        ],
-        "goodAnswerIndex": [
-            1
-        ]
-    },
-    {
-        "question": "(Java) Quel type de variable désigne un nombre entier ?",
-        "answers": [
-            "int",
-            "double",
-            "float",
-            "String",
-            "entier"
-        ],
-        "goodAnswerIndex": [
-            0
-        ]
-    },
-    {
-        "question" : "(Java) Quel syntaxe de déclaration est correct ?",
-        "answers" : [
-            "maVariable = \"hello world\";",
-            "string = \'Hello world\';",
-            "char maVariable = \"Hello world\";",
-            "string maVariable = \"Hello world\";",
-            "String maVariable = \"Hello world\";",
-            "\"Hello world\" = maVariable(string);",
-            "string(maVariable) = \"Hello world\";",
-            "String maVariable(\"Hello world\";)"
-        ],
-        "goodAnswerIndex" : [
-            4
-        ]
-    },
-    {
-        "question" : "(Java) Qu'est ce que \"String\" ?",
-        "answers" : [
-            "Un type de variable",
-            "Une classe",
-            "Une fonction",
-            "Une méthode",
-            "Une variable",
-            "Un type de sous-vêtement",
-        ],
-        "goodAnswerIndex" : [
-            1
-        ]
-    },
-    {
-        "question": "(Java) Qu'est ce qu'une méthode statique ?",
-        "answers": [
-            "Une méthode qui ne bouge pas dans le code",
-            "Une méthode qui ne change pas de taille",
-            "Une méthode lambda",
-            "Une méthode qui ne prend aucun paramètre",
-            "Une méthode qui ne demande pas d'objet pour être appelée",
-            "Une méthode qui peut être appelée une seule fois"
-        ],
-        "goodAnswerIndex": [
-            4
-        ]
-    },
-    {
-        "question": "Quel est le niveau du langage Python ?",
-        "answers": [
-            "Bas niveau",
-            "Facile",
-            "Intermédiaire"
-            "Haut niveau",
-        ],
-        "goodAnswerIndex": [
-            2
-        ]
-    },
-    {
-        "question": "(Python) Quel est la syntaxe de la boucle for correcte?",
-        "answers": [
-            "for(i = 0; i == 2; i++)",
-            "for i in range(2)",
-            "for(i:2)",
-            "for (i = 0, i == 2, i++)"
-        ],
-        "goodAnswerIndex": [
-            1
-        ]
-    },
-    {
-        "question": "(Python) Comment définir une fonction ?",
-        "answers": [
-            "function test(parameters)",
-            "funct test(parameters)",
-            "def test(parameters)",
-            "function test(var parameters)",
-            "funct test(var parameters)",
-            "def test(var parameters)"
-        ],
-        "goodAnswerIndex": [
-            2
-        ]
-    },
-    {
-        "question" : "En JavaScript, quel est la différence entre var et let ?",
-        "answers" : [
-            "La portée",
-            "La taille maximal de la variable",
-            "L'un est pour le client, l'autre pour le serveur",
-            "La vitesse de localisation"
-        ],
-        "goodAnswerIndex" : [
-            0
-        ]
-    },
-    {
-        "question" : "JavaScript est-il typé ?",
-        "answers" : [
-            "Oui",
-            "Non"
-        ],
-        "goodAnswerIndex" : [
-            0
-        ]
-    },
-    {
-        "question" : "(JavaScript) La syntaxe (a, b) => a * (a + b) / b; existe-t-elle et est-elle correct ?",
-        "answers" : [
-            "Oui",
-            "Non"
-        ],
-        "goodAnswerIndex" : [
-            0
-        ]
-    },
-    {
-        "question" : "(JavaScript) Quel objet javascript permet d'acceder au DOM ?",
-        "answers" : [
-            "dom",
-            "http",
-            "document",
-            "page",
-            "mainPage"
-        ],
-        "goodAnswerIndex" : [
-            0
-        ]
-    },
-    {
-        "question" : "(JavaScript) Quel framework de JavaScript permet de créer un serveur ?",
-        "answers" : [
-            "AngularJS",
-            "React",
-            "Vue.js",
-            "jQuerry",
-            "NodeJS"
-        ],
-        "goodAnswerIndex" : [
-            4
-        ]
-    },
-    {
-        "question" : "Question Bonus - A quel langage appartient cette syntaxe : std::thread* task(sorting, &data, dataSize, \"QuickSort\", &sortedData);",
-        "answers" : [
-            "Java",
-            "JavaScript",
-            "HTML",
-            "CSS",
-            "PHP",
-            "C",
-            "Pascal",
-            "Fortran",
-            "C++",
-            "C#",
-            "Brainfuck",
-            "Ruby",
-            "Whitespace",
-        ],
-        "goodAnswerIndex" : [
-            8
-        ]
-    }, */
-];
+var cartes = [];
 
 function generateCarte()
 {   
@@ -257,14 +28,21 @@ function generateCarte()
 }
 
 function startTest()
-{
+{  
+    if (index != 0) {
+        var cartes = document.getElementsByClassName('carte');
+        for (let j = 0; j < cartes.length; j++) {
+            cartes[j + 1].remove();
+        }
+        index = 0;
+    }
     generateCarte();
     document.querySelector('#content').style.display = 'flex';
     document.getElementById("start-button").style.display = "none";
     document.getElementById("rickRoll").style.display = "block";
     
     $("#content").css("display", "flex").hide().fadeIn();
-    $('#leaderboard').fadeOut(400);
+    $('#leaderboard').css("display", "none");
 }
 
 function next()
@@ -326,8 +104,24 @@ function sendName()
             method: "POST"
         })
         .then((result) => result.json())
-        .then((data) => console.log(data));
-        // .....
+        .then((data) => {
+            data.forEach(element => {
+                let newLine = document.querySelector('.line').cloneNode(true);
+    
+                newLine.querySelector(".rankingUsername").innerHTML = element.pseudo;
+                newLine.querySelector(".rankingUserNote").innerHTML = element.score;
+                
+                document.getElementById('tab').appendChild(newLine);
+            });
+        });
+
+        fetch(`http://${host}:${port}/questions`, {
+            method: "POST"
+        })
+        .then((result) => result.json())
+        .then((data) => {
+            cartes = data;
+        });
     }   
     else
     {
@@ -336,14 +130,14 @@ function sendName()
 }
 
 function result() {
-    $('#leaderboard').fadeIn(1500);
-    $('.carte').fadeOut(1000);
+    // $('#leaderboard').fadeIn(1500);
+    $('.carte').css("display", "none");
     $('#result').css("display", "flex").hide().fadeIn(400);
     $('#retour-fin').css("display", "flex").hide().fadeIn(400);
-
+    console.log(currentGame.score);
     // .....
 
-    document.querySelector('#mainInfo').innerHTML = currentGame.score * 100 / cartes.length;
+    document.querySelector('#mainInfo').innerHTML = currentGame.score * 100 / cartes.length + '%';
 
     if(currentGame.score < cartes.length * 0.5){
         document.querySelector("#rating").setAttribute("src", "assets/img/ranking-d.png");
@@ -371,15 +165,16 @@ function result() {
     }
 }
 
-for (let index = 0; index < 10; index++) 
+/* for (let index = 0; index < 10; index++) 
 {
-    let newLine = document.getElementById('rankingLineOrigin').cloneNode(true);
+    let newLine = document.querySelector('.line').cloneNode(true);
     document.getElementById('tab').appendChild(newLine);
-}
+    
+} */
 
 function Random()
 {
-    let rand = Math.random() * (100 - 1) + 1;
+    let rand = Math.random() * (90 - 1) + 1;
     return rand;
 }
 const circleRand = document.getElementsByClassName('circleRandom');
@@ -411,15 +206,31 @@ function lunatic()
 
 function retour()
 {
-    fetch(`http://${host}:${port}/upload`, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-          },
-        body: {a:1}
-    });
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    headers.append('Accept', 'application/json');
+    headers.append('Access-Control-Allow-Origin', '*');
+    headers.append('Access-Control-Allow-Methods', 'GET, POST, PATCH, PUT, DELETE, OPTIONS');
+    headers.append('Access-Control-Allow-Header', 'Origin, Content-Type, X-Auth-Token');
 
-    $('#result').fadeOut(1000);
+    fetch(`http://${host}:${port}/upload`, {
+        mode: 'cors',
+        credentials: 'include',
+        method: 'POST',
+        body: {a:1, b:0},
+        headers: headers
+    })
+    .then((result) => result.json)
+    .then((data) => console.log(data));
+    
+    $('#result').css("display", "none");
     $('#retour-fin').fadeOut(1000);
+    $('#leaderboard').fadeIn(1500);
     document.getElementById('mainInfo').innerHTML = "Overall Ranking";
 }
+
+/*  var refresh = setInterval(
+    function () {
+        $('#leaderboard').load("index.html");
+    },
+    3000);   */
