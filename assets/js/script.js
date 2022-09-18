@@ -134,7 +134,6 @@ function result() {
     $('.carte').css("display", "none");
     $('#result').css("display", "flex").hide().fadeIn(400);
     $('#retour-fin').css("display", "flex").hide().fadeIn(400);
-    console.log(currentGame.score);
     // .....
 
     document.querySelector('#mainInfo').innerHTML = currentGame.score * 100 / cartes.length + '%';
@@ -206,22 +205,13 @@ function lunatic()
 
 function retour()
 {
-    let headers = new Headers();
-    headers.append('Content-Type', 'application/json');
-    headers.append('Accept', 'application/json');
-    headers.append('Access-Control-Allow-Origin', '*');
-    headers.append('Access-Control-Allow-Methods', 'GET, POST, PATCH, PUT, DELETE, OPTIONS');
-    headers.append('Access-Control-Allow-Header', 'Origin, Content-Type, X-Auth-Token');
-
     fetch(`http://${host}:${port}/upload`, {
-        mode: 'cors',
-        credentials: 'include',
         method: 'POST',
-        body: {a:1, b:0},
-        headers: headers
-    })
-    .then((result) => result.json)
-    .then((data) => console.log(data));
+        headers: {
+            'Content-Type' : 'application/json'
+        },
+        body: JSON.stringify(currentGame)
+    });
     
     $('#result').css("display", "none");
     $('#retour-fin').fadeOut(1000);

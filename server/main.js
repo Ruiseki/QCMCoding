@@ -1,19 +1,22 @@
 const   express = require('express'),
+        cors = require('cors'),
         fs = require('fs'),
         bodyParser = require('body-parser');
 
-var data = JSON.parse(fs.readFileSync('./ranking.json'));
-var questions = JSON.parse(fs.readFileSync('./questions.json'));
+// var data = JSON.parse(fs.readFileSync('./ranking.json'));
+var data = require('./ranking.json');
+var questions = require('./questionsTest.json');
+var corsOptions = {
+    origin : 'http://92.95.32.114',
+    optionsSuccessStatus : 200,
+    methods : 'POST'
+}
 
 const app = express();
-
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cors(corsOptions));
 
 app.use(express.json());
-
-/* app.use(express.json({
-    limit: '50mb'
-})); */
 
 app.post('/ranking', (req, res) => {
     res.set('Access-Control-Allow-Origin', '*');
@@ -26,13 +29,16 @@ app.post('/questions', (req, res) => {
 });
 
 app.post('/upload', (req, res) => {
-    console.log(req.body);
 
-    /* let game = req.body;
-    
+    let game = req.body;
+    if(typeof(game.score) == 'string') game.score = '100+%';
+    else game.score = `${game.score * 100 / questions.length}%`;
+
     data.push(game);
     data.sort((a, b) => b.id - a.id);
-    fs.writeFileSync('./ranking.json', JSON.stringify(data)); */
+    fs.writeFileSync('./ranking.json', JSON.stringify(data));
+
+    res.status(200);
 });
 
 app.listen(8044, () => {
