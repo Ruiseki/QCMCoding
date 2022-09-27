@@ -5,9 +5,9 @@ const   express = require('express'),
 
 // var data = JSON.parse(fs.readFileSync('./ranking.json'));
 var data = require('./ranking.json');
-var questions = require('./questionsTest.json');
+var questions = require('./questions.json');
 var corsOptions = {
-    origin : 'http://92.95.32.114',
+    origin : 'http://127.0.0.1',
     optionsSuccessStatus : 200,
     methods : 'POST'
 }
@@ -19,12 +19,10 @@ app.use(cors(corsOptions));
 app.use(express.json());
 
 app.post('/ranking', (req, res) => {
-    res.set('Access-Control-Allow-Origin', '*');
     res.status(200).json(data);
 });
 
 app.post('/questions', (req, res) => {
-    res.set('Access-Control-Allow-Origin', '*');
     res.status(200).json(questions);
 });
 

@@ -1,4 +1,4 @@
-var host = '92.95.32.114', port = 8044;
+var host = '127.0.0.1', port = 8044;
 var xhr = new XMLHttpRequest();
 var index = 0;
 var currentGame = {
